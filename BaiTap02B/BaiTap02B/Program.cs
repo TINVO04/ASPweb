@@ -27,9 +27,10 @@ app.MapControllerRoute(
     pattern: "{controller=TheLoai}/{action=Index}/{id?}");
 app.MapControllerRoute(
     name: "trang-chu",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-app.MapControllerRoute(
-    name: "the-loai",
-    pattern: "{controller=TheLoai}/{action=Index}/{id?}");
+    pattern: "trang-chu/{action=Index}/{id?}" ,
+    defaults: new {controller = "TheLoai",Action="Index"});
+//app.MapControllerRoute(
+//    name: "the-loai",
+//    pattern: "{controller=TheLoai}/{action=Index}/{id?}");
 
 app.Run();
