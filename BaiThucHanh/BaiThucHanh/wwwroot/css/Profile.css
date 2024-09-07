@@ -1,0 +1,56 @@
+﻿/* Custom CSS */
+.bg-light {
+    background-color: blue;
+}
+
+.rounded {
+    border-radius: .5rem;
+}
+
+.rounded-left {
+    border-top-left-radius: .rem;
+    border-bottom-left-radius: .5rem;
+}
+
+.gradient {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+}
+
+.avatar {
+    width: 150px;
+    height: 150px; /* Đảm bảo chiều rộng và chiều cao bằng nhau */
+    border-radius: 50%; /* Biến ảnh thành hình tròn */
+    object-fit: cover; /* Đảm bảo ảnh không bị méo */
+}
+
+
+.full-height {
+    height: 100vh;
+}
+/* Thay đổi màu của khung Information */
+/* Bảo đảm chiều cao tự động điều chỉnh */
+.card-body {
+    background-color: #f0f8ff;
+    color: #333;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Dàn đều nội dung */
+    height: auto; /* Đảm bảo chiều cao tự động điều chỉnh */
+}
+
+/* Đảm bảo icon mạng xã hội không tạo khoảng trắng thừa */
+.d-flex a {
+    margin-bottom: 0; /* Xóa khoảng cách thừa dưới các biểu tượng */
+    font-size: 1.5rem; /* Điều chỉnh kích thước biểu tượng */
+}
+
+/* Căn chỉnh biểu tượng đúng vị trí */
+.d-flex {
+    align-items: center; /* Căn chỉnh biểu tượng theo chiều dọc */
+    justify-content: flex-start; /* Căn chỉnh biểu tượng theo chiều ngang */
+}
+.text-muted {
+    white-space: nowrap;  
+    padding-block:6px;
+}

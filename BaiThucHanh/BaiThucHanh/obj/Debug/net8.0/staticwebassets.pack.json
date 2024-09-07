@@ -5,8 +5,12 @@
       "PackagePath": "staticwebassets\\BaiThucHanh.bundle.scp.css"
     },
     {
-      "Id": "D:\\LTWEBASP\\ASPweb\\BaiThucHanh\\BaiThucHanh\\wwwroot\\Img\\01.jpg",
-      "PackagePath": "staticwebassets\\Img\\01.jpg"
+      "Id": "D:\\LTWEBASP\\ASPweb\\BaiThucHanh\\BaiThucHanh\\wwwroot\\css\\01.jpg",
+      "PackagePath": "staticwebassets\\css\\01.jpg"
+    },
+    {
+      "Id": "D:\\LTWEBASP\\ASPweb\\BaiThucHanh\\BaiThucHanh\\wwwroot\\css\\Profile.css",
+      "PackagePath": "staticwebassets\\css\\Profile.css"
     },
     {
       "Id": "D:\\LTWEBASP\\ASPweb\\BaiThucHanh\\BaiThucHanh\\wwwroot\\css\\Tuan2.css",

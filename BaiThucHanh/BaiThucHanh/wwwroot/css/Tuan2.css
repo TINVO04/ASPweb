@@ -11,29 +11,39 @@
     font-size: 25px;
     background-color: #d7e6fa;
     padding: 10px;
-    width: 300%; /* Đảm bảo header chiếm toàn bộ chiều rộng của container */
+    width: 100%; /* Đảm bảo header chiếm toàn bộ chiều rộng của container */
 }
 
 .sub-container {
     display: flex; /* Áp dụng flexbox */
     justify-content: space-between; /* Căn chỉnh khoảng cách giữa các phần tử */
-    align-items: flex-start; /* Căn các phần tử ở đầu trên cùng của container */
-    width: 300%; /* Đảm bảo sub-container chiếm toàn bộ chiều rộng của container */
+    align-items: stretch; /* Đảm bảo các phần tử có chiều cao bằng nhau */
+    width: 100%; /* Đảm bảo sub-container chiếm toàn bộ chiều rộng của container */
 }
+
 .left, .right {
-    padding-top: 80px;
-    padding-block: 80px;
     flex: 1; /* Mỗi phần tử chiếm một nửa chiều rộng */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Thêm padding để tạo khoảng cách nội bộ */
 }
+
 .left {
     background-color: #e1d2e6;
 }
-.right
-{
+
+.right {
     background-color: #d2e6d2;
-    padding-block: 88px
 }
+
+img {
+    max-width: 80%; /* Đảm bảo ảnh không vượt quá chiều rộng của phần tử chứa */
+    max-height: 80%; /* Đảm bảo ảnh không vượt quá chiều cao của phần tử chứa */
+    object-fit: cover; /* Đảm bảo ảnh không bị méo */
+}
+
 .footer1 {
     background-color: #ffe6cd;
-    width: 300%;
+    width: 100%; /* Đảm bảo footer1 chiếm toàn bộ chiều rộng của container */
 }

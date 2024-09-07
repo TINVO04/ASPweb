@@ -40,5 +40,9 @@ namespace BaiThucHanh.Controllers
             ViewBag.KetQua = ketQua;
             return View("MayTinh");
         }
+        public IActionResult Profile()
+        {
+            return View();
+        }
     }
 }
