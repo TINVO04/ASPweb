@@ -1,0 +1,15 @@
+﻿@{
+	ViewData["Title"] = "MayTinh";
+}
+
+<h2>Kết Quả</h2>
+<p>
+	@if(ViewBag.ErrorMessage != null)
+	{
+		<span style="color: red">@ViewBag.ErrorMessage</span>
+	}
+	else
+	{
+		@ViewBag.KetQua
+	}
+</p>

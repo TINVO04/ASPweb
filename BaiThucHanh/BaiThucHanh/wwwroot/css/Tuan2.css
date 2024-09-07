@@ -1,0 +1,39 @@
+﻿.container {
+    display: flex;
+    flex-direction: column; /* Sắp xếp theo cột */
+    align-items: center; /* Căn giữa các phần tử theo trục ngang */
+    text-align: center;
+    font-size: 20px;
+}
+
+.header {
+    font-weight: bold;
+    font-size: 25px;
+    background-color: #d7e6fa;
+    padding: 10px;
+    width: 300%; /* Đảm bảo header chiếm toàn bộ chiều rộng của container */
+}
+
+.sub-container {
+    display: flex; /* Áp dụng flexbox */
+    justify-content: space-between; /* Căn chỉnh khoảng cách giữa các phần tử */
+    align-items: flex-start; /* Căn các phần tử ở đầu trên cùng của container */
+    width: 300%; /* Đảm bảo sub-container chiếm toàn bộ chiều rộng của container */
+}
+.left, .right {
+    padding-top: 80px;
+    padding-block: 80px;
+    flex: 1; /* Mỗi phần tử chiếm một nửa chiều rộng */
+}
+.left {
+    background-color: #e1d2e6;
+}
+.right
+{
+    background-color: #d2e6d2;
+    padding-block: 88px
+}
+.footer1 {
+    background-color: #ffe6cd;
+    width: 300%;
+}
