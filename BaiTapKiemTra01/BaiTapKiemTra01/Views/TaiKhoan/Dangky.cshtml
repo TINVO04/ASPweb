@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewData["Title"] = "Dangky";
+}
+
+@model TaiKhoanViewModel
+<div class="container">
+    <h3>Đăng Ký</h3>
+    <form asp-action="Dangky" method="post">
+
+        <div class="form-group">
+            <label asp-for="Ten">Tên</label>
+            <input asp-for="Ten" class="form-control" />
+            <span asp-validation-for="Ten" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Tuoi">Tuổi</label>
+            <input asp-for="Tuoi" class="form-control" />
+            <span asp-validation-for="Tuoi" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Username">Username</label>
+            <input asp-for="Username" class="form-control" />
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Password">Password</label>
+            <input asp-for="Password" type="password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Đăng Ký</button>
+
+    </form>
+
+    <hr />
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+</div>
+
