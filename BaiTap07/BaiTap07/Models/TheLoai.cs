@@ -6,8 +6,11 @@ namespace BaiTap07.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Không được để tróng tên thể loại")]
+        [Display(Name ="Thể Loại")]
         public string Name { get; set; }
-        public DateTime DateCreated { get; set; } = DateTime.Now;
+		[Required(ErrorMessage = "Không đúng định dạng ngày")]
+		[Display(Name = "Ngày Tạo")]
+		public DateTime DateCreated { get; set; } = DateTime.Now;
     }
 }

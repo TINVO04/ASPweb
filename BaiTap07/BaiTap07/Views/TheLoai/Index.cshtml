@@ -11,10 +11,11 @@
 			{
 				<tr>
 					<td width="30%">@item.Name </td>
-					<td width="70%">@string.Format("{0:dd/MM/yyyy}", item.DateCreated)</td>
+					<td width="30%">@string.Format("{0:dd/MM/yyyy}", item.DateCreated)</td>
+					<td width="40"><a asp-action="Edit" asp-route-id="@item.Id">Edit</a> | <a asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
 				</tr>
 			}
 		</tbody>
 	</table>
 	<a asp-controller="TheLoai" asp-action="Create" class="btn btn-primary">Thêm Mới</a>
-</div>
+</div>	
