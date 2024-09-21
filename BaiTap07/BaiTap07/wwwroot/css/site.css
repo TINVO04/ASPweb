@@ -21,10 +21,9 @@ body {
   margin-bottom: 60px;
 }
 
-<!-- HTML ! -->
-<button class="button-78" role="button" > Button 78</button >
 /* CSS */
 .button-78 {
+    /* Loại bỏ box-shadow cho nút 'Tạo Mới' */
     align-items: center;
     appearance: none;
     background-clip: padding-box;
