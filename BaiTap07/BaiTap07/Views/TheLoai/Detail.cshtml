@@ -1,0 +1,9 @@
+﻿@model TheLoai
+
+<div class="container">
+	ID: <b>@Model.Id</b> <br />
+	Tên thể loại: <b>@Model.Name</b><br />
+	Ngày tạo: <b>@string.Format("{00:dd/MM/yyyy}", Model.DateCreated)</b><br />
+	<a asp-controller="TheLoai" asp-action="Index" class="btn btn-primary">Quay Về</a>
+
+</div>
