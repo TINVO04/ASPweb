@@ -63,5 +63,20 @@ namespace ProjectA.Controllers
             }
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            var sanpham = _db.SanPham.FirstOrDefault(sp => sp.Id == id);
+            if(sanpham == null)
+            {
+                return NotFound();
+            }
+            _db.SanPham.Remove(sanpham);
+            _db.SaveChanges();
+            return Json(new { success = true });
+
+
+        }
     }
 }

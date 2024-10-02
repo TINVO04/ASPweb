@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using ProjectA.Data;
 using ProjectA.Models;
 using System.Diagnostics;
 
@@ -8,15 +10,18 @@ namespace ProjectA.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
         {
+            _db = db;
             _logger = logger;
         }
 
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<SanPham> sanpham = _db.SanPham.Include("TheLoai").ToList();
+            return View(sanpham);
         }
 
         public IActionResult Privacy()
