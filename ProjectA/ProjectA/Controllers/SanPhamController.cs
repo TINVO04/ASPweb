@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProjectA.Data;
@@ -7,6 +8,7 @@ using ProjectA.Models;
 namespace ProjectA.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class SanPhamController : Controller
     {
         public readonly ApplicationDbContext _db;

@@ -42,7 +42,7 @@
         $.ajax({
             url: `SanPham/Delete`,
             data: { id: idx},
-            type: "POST",
+            type: 'POST',
             success: function (data) {
                 row.closest("tr").remove();
             }
