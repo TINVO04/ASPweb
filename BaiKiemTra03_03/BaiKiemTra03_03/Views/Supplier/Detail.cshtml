@@ -1,0 +1,11 @@
+﻿@model Supplier
+
+<div class="container">
+	ID: <b>@Model.Id</b> <br />
+	Tên Nhà Cung Cấp: <b>@Model.Name</b><br />
+	Địa Chỉ: <b>@Model.Address</b><br />
+	Số Điện Thoại: <b>@Model.PhoneNumber</b><br />
+	Email: <b>@Model.Email</b><br />
+	<a asp-controller="Supplier" asp-action="Index" class="btn btn-primary">Quay Về</a>
+
+</div>

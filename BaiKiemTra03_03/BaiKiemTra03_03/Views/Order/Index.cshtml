@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Order>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Ngày Đặt</th>
+                <th>Tổng Giá Trị</th>
+                <th>Nhà Cung Cấp</th>
+                <th>Tình Trạng Đơn Hàng</th>
+                <th>Chức năng</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.NgayDat.ToString("dd/MM/yyyy")</td>
+                    <td>@item.TongGia.ToString("C")</td>
+                    <td>@item.Supplier.Name</td>
+                    <td>@item.OrderStatus</td>
+                    <td>
+                        <a asp-action="Upsert" asp-route-id="@item.Id">Sửa</a> |
+                        <a href="#">Chi Tiết</a> |
+                        <a href="#" onclick="confirmDelete(@item.Id, $(this))">Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-controller="Order" asp-action="Upsert" class="btn btn-primary">Thêm mới</a>
+</div>
+
+<script>
+    function confirmDelete(id, row) {
+        if (confirm("Bạn có muốn xóa đơn hàng có ID là " + id + "?")) {
+            xoaDonHang(id, row);
+        }
+    }
+
+    function xoaDonHang(id, row) {
+        $.ajax({
+            url: '@Url.Action("Delete", "Order")',  // URL xử lý xóa đơn hàng
+            data: { id: id },
+            type: 'POST',
+            success: function (response) {
+                if (response.success) {
+                    row.closest("tr").remove();
+                } else {
+                    alert("Đã xảy ra lỗi khi xóa đơn hàng!");
+                }
+            },
+            error: function () {
+                alert("Đã xảy ra lỗi khi xóa đơn hàng!");
+            }
+        });
+    }
+</script>

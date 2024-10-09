@@ -1,0 +1,53 @@
+﻿@model Order
+
+<div class="container">
+    <h3> @(Model.Id == 0 ? "Thêm Đơn Hàng" : "Chỉnh Sửa Đơn Hàng") </h3>
+    <form method="post" asp-action="Upsert">
+        <input asp-for="Id" type="hidden" />
+
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <!-- Ngày Đặt -->
+        <div class="form-group">
+            <label asp-for="NgayDat">Ngày Đặt</label>
+            <input asp-for="NgayDat" type="date" class="form-control" />
+            <span asp-validation-for="NgayDat" class="text-danger"></span>
+        </div>
+
+        <!-- Tổng Giá -->
+        <div class="form-group">
+            <label asp-for="TongGia">Tổng Giá</label>
+            <input asp-for="TongGia" type="number" class="form-control" step="0.01" />
+            <span asp-validation-for="TongGia" class="text-danger"></span>
+        </div>
+
+        <!-- Tình Trạng Đơn Hàng -->
+        <div class="form-group">
+            <label asp-for="OrderStatus">Tình Trạng Đơn Hàng</label>
+            <select asp-for="OrderStatus" class="form-control">
+                <option value="">Chọn tình trạng</option>
+                <option value="Pending">Chờ xử lý</option>
+                <option value="Completed">Hoàn thành</option>
+                <option value="Cancelled">Đã hủy</option>
+            </select>
+            <span asp-validation-for="OrderStatus" class="text-danger"></span>
+        </div>
+
+        <!-- Nhà Cung Cấp -->
+        <div class="form-group">
+            <label asp-for="SupplierId">Nhà Cung Cấp</label>
+            <select asp-for="SupplierId" asp-items="@ViewBag.DsSupplier" class="form-control">
+                <option value="">Chọn nhà cung cấp</option>
+            </select>
+            <span asp-validation-for="SupplierId" class="text-danger"></span>
+        </div>
+
+        <!-- Nút thao tác -->
+        <button type="submit" class="btn btn-primary">@(Model.Id == 0 ? "Tạo mới" : "Cập nhật")</button>
+        <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+    </form>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

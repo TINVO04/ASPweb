@@ -50,7 +50,7 @@ namespace ProjectA.Controllers
                 return NotFound();
             }
             var theloai = _db.TheLoai.Find(id);
-            return View(theloai);
+            return View();
 
         }
 

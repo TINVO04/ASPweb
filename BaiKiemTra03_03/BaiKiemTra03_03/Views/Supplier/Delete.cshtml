@@ -1,0 +1,48 @@
+﻿@model Supplier
+
+<div class="container">
+    <h3>Xoá Nhà Cung Cấp</h3>
+    <form method="post" asp-action="DeleteConfirm" onsubmit="return confirmDelete();">
+        <input asp-for="Id" type="hidden" />
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Name">Tên Nhà Cung Cấp</label>
+            <input asp-for="Name" type="text" class="form-control" readonly />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Address">Địa Chỉ</label>
+            <input asp-for="Address" type="text" class="form-control" readonly />
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="PhoneNumber">Số Điện Thoại</label>
+            <input asp-for="PhoneNumber" type="text" class="form-control" readonly />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email">Email</label>
+            <input asp-for="Email" type="text" class="form-control" readonly />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="button-container">
+            <button type="submit" class="btn btn-primary">Xóa</button>
+            <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @* Script xác nhận khi xóa *@
+    <script type="text/javascript">
+        function confirmDelete() {
+            return confirm("Bạn có chắc chắn muốn xóa nhà cung cấp này không?");
+        }
+    </script>
+
+    <partial name="_ValidationScriptsPartial" />
+}
